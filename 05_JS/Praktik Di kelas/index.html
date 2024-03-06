@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Document</h1>
+    <script>
+      var pilot = "Tony Stark";
+      let robot_active = false;
+      const bettery = 100;
+      var kelas_react_b = [
+        {
+          nama: "Muchson",
+          status: "mentor",
+          umur: 25,
+        },
+        {
+          nama: "Nazar",
+          status: "peserta",
+          umur: 20,
+        },
+        {
+          nama: "Daffa",
+          status: "peserta",
+          umur: 22,
+          status: "belum bayar",
+        },
+      ]; // json data / array of object
+
+      const nabraska = {
+        nama: "Nabraska",
+        status: "peserta",
+        umur: 21,
+      };
+      let list_nama_a = ["muchson", "nazar"];
+      let list_nama_b = ["daffa", "nabraska"];
+      list_nama_c = list_nama_a.concat(list_nama_b);
+      let list_nama_a_besar = list_nama_a.map(function (nama) {
+        return nama.toUpperCase() + "a"; //tempat pengolahan logika
+      });
+      kelas_react_b = [...kelas_react_b, nabraska];
+      //penggunaan iterasi/pengulangan menurun
+      // for (let index = 5; index > 0; index--) {
+      //   console.log(index);
+      //   // const element = list_nama_a[index];
+      // }
+
+      //penggunaan iterasi/pengulangan naik
+      // for (let index = 0; index < list_nama_a.length; index++) {
+      //   // console.log("sebelum masuk if");
+      //   if (kelas_react_b[index].nama == "Muchson") {
+      //     console.log(kelas_react_b[index].nama + "- mentor");
+      //     //buttonnya di kasih warna abu2
+      //   } else {
+      //     console.log("bettery =" + kelas_react_b[index].nama + "- mentee");
+      //   }
+      //   // const element = list_nama_a[index];
+      // }
+
+      //   const person = {
+      //     nama: "John Doe",
+      //     umur: 25,
+      //     jenisKelamin: "Laki-laki",
+      //   };
+
+      //   contoh tulis manual
+      //   let a = "muchson",
+      //     b = "attoy";
+      //   contoh tulis descructuring
+
+      //   let a, b;
+      //   [a, b] = ["muchson", "attoy"];
+      //   console.log(a);
+      //   console.log(b);
+
+      //   console.log("pilot =" + pilot);
+      //   console.log("status =" + status);
+      //   console.log("bettery =" + bettery);
+
+      // console.log("bettery =" + kelas_react_b[1].nama);
+      // console.log("bettery =" + kelas_react_b[2].nama);
+      // console.log("bettery =" + kelas_react_b[3].nama);
+      //   console.log("bettery =" + list_nama_a_besar);
+      //   console.log("object =" + person["nama"]); //tidak rekomendasi
+      //   console.log("object =" + person.nama);
+
+      // ============================function================================================================
+      //berfungsi untuk menghidupkan si ironman (contoh yang jelek)
+      function nama_dari_fucntion() {
+        console.log("nama_dari_fucntion");
+      }
+      function activateRobot() {
+        console.log("activateRobot");
+        robot_active = true;
+      }
+      function deactivateRobot() {
+        console.log("deactivateRobot");
+        robot_active = false;
+      }
+      activateRobot();
+      console.log(robot_active);
+      deactivateRobot();
+      console.log(robot_active);
+    </script>
+  </body>
+</html>

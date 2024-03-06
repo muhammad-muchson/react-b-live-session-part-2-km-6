@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>materi JS</h1>
+    <script type="module" src="script.js"></script>
+    <script>
+      console.log("script");
+      let ironMan = "Tony Stark";
+      let age = "55";
+      let robotActive = false;
+      function activateRobot() {
+        robotActive = true;
+        console.log(ironMan + " mengaktifkan robotnya!");
+      }
+
+      function deactivateRobot() {
+        robotActive = false;
+        console.log(ironMan + " menonaktifkan robotnya!");
+      }
+      if (robotActive) {
+        console.log(ironMan + " sedang mengendalai robotnya!");
+      } else {
+        console.log("Robot harus diaktifkan terlebih dahulu!");
+      }
+
+      function activateRobot() {
+        robotActive = true;
+        console.log(ironMan + " mengaktifkan robotnya!");
+      }
+
+      function deactivateRobot() {
+        robotActive = false;
+        console.log(ironMan + " menonaktifkan robotnya!");
+      }
+
+      // Aktivasi robot
+      activateRobot();
+
+      // Mengecek status robot
+      if (robotActive) {
+        console.log(ironMan + " sedang mengendalai robotnya!");
+      } else {
+        console.log("Robot harus diaktifkan terlebih dahulu!");
+      }
+
+      // Nonaktifkan robot
+      deactivateRobot();
+    </script>
+  </body>
+</html>
