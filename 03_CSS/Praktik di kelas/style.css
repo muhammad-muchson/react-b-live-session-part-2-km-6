@@ -1,0 +1,84 @@
+/* Reset margin for all elements */
+body {
+  margin: 0;
+}
+
+/* Display headings inline */
+h1 {
+  display: inline;
+}
+
+/* Style for elements with class 'red' */
+.red {
+  background-color: red;
+}
+
+/* Style for elements with class 'red' on hover */
+.red:hover {
+  background-color: rgb(24, 0, 0); /* Darker red on hover */
+  color: aliceblue; /* Change text color on hover */
+}
+
+/* Style for elements with class 'joinBtn' */
+.joinBtn {
+  background-color: gold; /* Gold background color */
+}
+
+/* Style for elements with class 'joinBtn' on hover */
+.joinBtn:hover {
+  background-color: rgb(245, 244, 240); /* Lighter background color on hover */
+}
+
+/* Style for table settings */
+.table-setting {
+  border: 1px solid black; /* Black border */
+  border-width: 1px; /* Set border width */
+}
+
+/* Flexbox settings for centering */
+.flex {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+}
+
+/* Flexbox settings for centering text */
+.text-center {
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  justify-content: center; /* Center content vertically */
+}
+
+/* Margin of 5px for elements with class 'margin-5px' */
+.margin-5px {
+  margin: 5px;
+}
+
+/* Padding of 5px for elements with class 'padding-5px' */
+.padding-5px {
+  padding: 5px;
+}
+
+/* Responsive image settings */
+.responsive {
+  padding: 20px; /* Padding around the image */
+  max-width: 100%; /* Maximum width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Background color settings */
+.background-blue {
+  background-color: rgba(55, 81, 126, 1); /* Blue background color */
+}
+
+/* Color settings for headings, links, and paragraphs */
+h1,
+a,
+p {
+  color: white; /* White text color */
+}
+
+/* Flexbox settings for space between elements */
+.space-between {
+  justify-content: center; /* Center content horizontally */
+  gap: 10px; /* Set gap between elements */
+}

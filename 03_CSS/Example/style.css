@@ -1,0 +1,5 @@
+/* CSS Untuk Layout Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: row;
+}
