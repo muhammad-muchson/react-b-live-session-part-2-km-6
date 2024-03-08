@@ -4,13 +4,120 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .error {
+        border: 1px solid red;
+      }
+      .success {
+        border: 1px solid green;
+      }
+      /* Tambahkan CSS untuk tabel */
+      table {
+        border-collapse: collapse; /* Menggabungkan border */
+        width: 100%; /* Menentukan lebar tabel */
+      }
+      th,
+      td {
+        border: 1px solid #ddd; /* Menambahkan border pada setiap sel */
+        padding: 8px; /* Menambahkan padding di dalam sel */
+      }
+      th {
+        background-color: #f2f2f2; /* Memberikan warna latar belakang pada header */
+        text-align: left; /* Menyetel teks agar rata kiri */
+      }
+    </style>
   </head>
   <body>
     <h1>Document</h1>
+    <h2>JS DOm</h2>
+    <form id="createProductForm">
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" name="productName" />
+      <small id="productNameError" class="error"></small>
+      <br />
+      <label for="productPrice">Product Price:</label>
+      <input type="text" id="productPrice" name="productPrice" />
+      <small id="productPriceError" class="error"></small><br />
+      <br />
+      <input type="submit" value="Create Product" />
+    </form>
+    <div id="productTableContainer"></div>
+
     <script>
-      var pilot = "Tony Stark";
-      let robot_active = false;
-      const bettery = 100;
+      // contoh pemakain js dom
+      const form = document.querySelector("#createProductForm");
+      const productNameEl = document.querySelector("#productName");
+      const productPriceEl = document.querySelector("#productPrice");
+      const productNameError = document.querySelector("#productNameError");
+      const productPriceError = document.querySelector("#productPriceError");
+      const productTableContainer = document.querySelector(
+        "#productTableContainer"
+      );
+      // function checkProductName() {
+
+      // }
+
+      //arrow function
+      const checkProductName = () => {
+        const value = productNameEl.value;
+        console.log(value.length);
+        if (value.length === 0) {
+          alert("product kososng");
+          console.log(value);
+        } else if (value.length > 5) {
+          alert("product name terlalu panjang ");
+        }
+      };
+      const checkProductPrice = () => {
+        const value = productPriceEl.value;
+        if (value.length < 3) {
+          alert("price terlalu pendek");
+          console.log(value);
+        }
+      };
+      const createProductTabel = () => {
+        console.log("createProductTabel");
+
+        const table = document.createElement("table");
+        const thead = document.createElement("thead");
+        const tbody = document.createElement("tbody");
+        const headerRow = document.createElement("tr");
+        const nameHeader = document.createElement("th");
+        const priceHeader = document.createElement("th");
+        const productRow = document.createElement("tr");
+        const nameCell = document.createElement("td");
+        const priceCell = document.createElement("td");
+
+        nameHeader.textContent = "Product Name";
+        nameHeader.textContent = "Product Price";
+
+        headerRow.appendChild(nameHeader);
+        headerRow.appendChild(priceHeader);
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        nameCell.textContent = productNameEl.value;
+        priceCell.textContent = productPriceEl.value;
+        productRow.appendChild(nameCell);
+        productRow.appendChild(priceCell);
+        tbody.appendChild(productRow);
+        table.appendChild(tbody);
+
+        productTableContainer.appendChild(table);
+      };
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        console.log("cek button");
+        document.querySelector("h2").style.color = "red";
+        checkProductName();
+        createProductTabel(productNameEl.value, productPriceEl.value);
+        // checkProductPrice();
+      });
+
+      // contoh pemakain vanila js
+      var pilot = "Muchson"; // string
+      let robot_active = false; // boolean
+      const bettery = 100; // number
       var kelas_react_b = [
         {
           nama: "Muchson",
@@ -35,7 +142,8 @@
         status: "peserta",
         umur: 21,
       };
-      let list_nama_a = ["muchson", "nazar"];
+
+      let list_nama_a = ["muchson", "nazar", "thalita"];
       let list_nama_b = ["daffa", "nabraska"];
       list_nama_c = list_nama_a.concat(list_nama_b);
       let list_nama_a_besar = list_nama_a.map(function (nama) {
@@ -92,18 +200,70 @@
       function nama_dari_fucntion() {
         console.log("nama_dari_fucntion");
       }
-      function activateRobot() {
-        console.log("activateRobot");
-        robot_active = true;
+      function activateRobot(jumlah) {
+        console.log(jumlah);
+        for (let index = 0; index < jumlah; index++) {
+          if (pilot == "Tony Stark") {
+            console.log("activateRobot");
+            robot_active = true;
+          } else {
+            console.log("Pilotnya bukan tony stark");
+            console.log("dan dilakukan perubahan data");
+            if (pilot == "Muchson") {
+              console.log("muchson adalah pilot pengganti");
+              pilot = "Tony Stark";
+            }
+          }
+        }
       }
+      class Mark1 {
+        shooting() {
+          console.log("fire");
+        }
+      }
+      class Oksigen {
+        bernafas() {
+          console.log("bernafas");
+        }
+      }
+      class Mark2 extends Oksigen {
+        constructor(armorColor, weapon, feature = "nano tech") {
+          super();
+          this.armorColor = armorColor;
+          this.weapon = weapon;
+          console.log("constructor");
+          this.feature = feature; // yang ini aja
+          let status = "inactive"; // jangan ditiru
+        }
+        active() {
+          console.log(
+            `mark suit active. Color armor ${this.armorColor}, weapen ${this.weapon}, feature ${this.feature}, status ${status}`
+          );
+        }
+
+        // method
+        shooting() {
+          console.log("bomb");
+        }
+        // method
+        fly() {
+          console.log("terbang");
+        }
+      }
+
       function deactivateRobot() {
         console.log("deactivateRobot");
         robot_active = false;
       }
-      activateRobot();
-      console.log(robot_active);
-      deactivateRobot();
-      console.log(robot_active);
+
+      const Muchson = new Mark2("Silver", "keris");
+      // const Muchson;
+      Muchson.bernafas();
+      // Muchson.fly();
+      // activateRobot(2);
+      // console.log(robot_active);
+      // deactivateRobot();
+      // console.log(robot_active);
     </script>
   </body>
 </html>
