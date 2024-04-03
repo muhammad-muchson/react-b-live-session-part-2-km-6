@@ -154,7 +154,7 @@ function AppRouting() {
             <Route path="/hero/:id" element={<HeroSections />} />
           </Route>
           {/* private untuk semua orang */}
-          <Route path="/a" element={<PublicComponent />}>
+          <Route path="/" element={<PublicComponent />}>
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
           </Route>
