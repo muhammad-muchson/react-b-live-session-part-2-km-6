@@ -163,8 +163,8 @@ function AppRouting() {
       </div>
       <div>
         {/* aku */}
-        {/* <NavBar />
-        <HeroSections /> */}
+        {/* <NavBar /> */}
+        {/* <HeroSections /> */}
         {/* hilmi */}
         {/* <HeroSection /> */}
         <h1 style={{ backgroundColor: "gray" }}>Footer</h1>

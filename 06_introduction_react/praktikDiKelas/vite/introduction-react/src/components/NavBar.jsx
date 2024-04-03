@@ -8,7 +8,7 @@ export default function NavBar(props) {
   // props.nama = "muchson";
   // semua hal yang diatas return maka tidak pernah akan di tampilkan pada layar tapi akan tetap di jalankan
   let id = 1;
-  const numbers = [1, 2, 3, 4, 5];
+  const numbers = [1001, 1002, 1003, 1004, 1005];
   return (
     <div>
       {/* props dari Appjs ={props.nama}
@@ -28,11 +28,26 @@ export default function NavBar(props) {
             <li>
               <Link to={`/dashboard`}>Dashboard</Link>
             </li>
-            {numbers.map((number) => (
-              <li key={number}>
-                <Link to={`/hero/${number}`}>Hero {number}</Link>
-              </li>
-            ))}
+            <table
+              style={{ borderCollapse: "collapse", border: "1px solid black" }}
+            >
+              <thead>
+                <tr>
+                  <th style={{ border: "1px solid black" }}>No.</th>
+                  <th style={{ border: "1px solid black" }}>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                {numbers.map((number) => (
+                  <tr key={number}>
+                    <td style={{ border: "1px solid black" }}>
+                      <Link to={`/hero/${number}`}>Hero {number}</Link>
+                    </td>
+                    <td style={{ border: "1px solid black" }}>{number}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </ul>
           <ul>
             <li>
