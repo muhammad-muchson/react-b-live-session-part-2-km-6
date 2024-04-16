@@ -17,5 +17,11 @@ export default function PrivateComponent() {
     return <Navigate to="/login" />;
   }
 
-  return <Outlet />; // Render nested routes
+  return (
+    <>
+      {/* <Navbar /> */}
+      <Outlet />
+      {/* <Footer /> */}
+    </>
+  ); // Render nested routes
 }

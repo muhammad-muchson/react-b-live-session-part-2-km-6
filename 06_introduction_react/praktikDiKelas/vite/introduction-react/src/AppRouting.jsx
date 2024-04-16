@@ -8,6 +8,7 @@ import {
   Navigate,
   useParams,
   useNavigate,
+  Outlet,
 } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -123,43 +124,44 @@ function AppRouting() {
     <>
       <div>
         {/* contoh route 1 */}
-        {/* <Routes>
+        <Routes>
           <Route path="/" Component={NavBar} />
           <Route path="/hero" Component={HeroSections} />
           <Route path="*" Component={NotFound} />
-        </Routes> */}
+        </Routes>
         {/* route bersarang */}
-        {/* <Routes>
+        <Routes>
           <Route path="/" element={<NavBar isLogin={true} />}>
             <Route path="/hero" element={<HeroSections />} />
             <Route path="login" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Route>
-        </Routes> */}
+        </Routes>
+        <Outlet />
         {/* dynamic routing */}
-        {/* <Routes>
+        <Routes>
           <Route path="/" element={<NavBar nama={"muchson"} />}>
             <Route path="/home" element={<Home />} />
             <Route path="/hero/:id" element={<HeroSections />} />
             <Route path="/login" element={isLoggedIn ? <Home /> : <Login />} />
             <Route path="*" element={<NotFound />} />
           </Route>
-        </Routes> */}
+        </Routes>
         {/* private routing */}
-        <Routes>
-          {/* private untuk super admin */}
-          <Route path="/" element={<PrivateComponent />}>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/hero/" element={<HeroSectionsHome />} />
-            <Route path="/hero/:id" element={<HeroSections />} />
-          </Route>
-          {/* private untuk semua orang */}
-          <Route path="/" element={<PublicComponent />}>
+        {/* <Routes> */}
+        {/* private untuk super admin */}
+        {/* <Route path="/" element={<PrivateComponent />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/hero/" element={<HeroSectionsHome />} />
+          <Route path="/hero/:id" element={<HeroSections />} />
+        </Route> */}
+        {/* private untuk semua orang */}
+        {/* <Route path="/" element={<PublicComponent />}>
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
           </Route>
           <Route path="*" element={<NotFound />} />
-        </Routes>
+        </Routes> */}
       </div>
       <div>
         {/* aku */}
