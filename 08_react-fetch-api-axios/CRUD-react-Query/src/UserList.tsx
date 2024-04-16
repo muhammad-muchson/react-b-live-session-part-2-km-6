@@ -10,18 +10,18 @@ const fetchUsers = async () => {
 };
 
 const UserList = () => {
-	const { data, status } = useQuery('users', fetchUsers);
+	const { data: dataUsers, status: statusUsers } = useQuery('users', fetchUsers);
 
-	if (status === 'loading') return <div>Loading...</div>;
-	if (status === 'error') return <div>Error fetching data</div>;
+	if (statusUsers === 'loading') return <div>Loading...</div>;
+	if (statusUsers === 'error') return <div>Error fetching data</div>;
 
 	return (
 		<div>
 			<h1>Users</h1>
 			<ul>
-				{data.map((user) => (
+				{dataUsers.map((user) => (
 					<li key={user.id}>
-						<strong>{user.name}</strong> - {user.email}
+						<strong>{user.id}</strong> - {user.name}
 					</li>
 				))}
 			</ul>
